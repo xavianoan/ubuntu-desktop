@@ -1,5 +1,6 @@
 #!/bin/bash
-mkdir -p chromium && cd chromium && echo "services:
+mkdir -p chromium && cd chromium && cat <<EOF > docker-compose.yaml
+services:
   chromium:
     image: lscr.io/linuxserver/chromium:latest
     container_name: chromium
@@ -17,5 +18,7 @@ mkdir -p chromium && cd chromium && echo "services:
     ports:
       - 3010:3000 
       - 3011:3001
-    shm_size: '1gb'
-    restart: unless-stopped" > docker-compose.yaml && docker compose up -d
+    shm_size: "1gb"
+    restart: unless-stopped
+EOF
+docker compose up -d
