@@ -8,7 +8,7 @@ services:
       - seccomp:unconfined #optional
     environment:
       - CUSTOM_USER=chrome
-      - PASSWORD=123987Root
+      - PASSWORD=sifreniz
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
